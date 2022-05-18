@@ -83,6 +83,9 @@ public class UserDao {
     }
 
 
+    public int deleteUserByIdx(int userIdx) {
+        String deleteUserByIdxQuery = "update User set status = 'DELETED' where userIdx = ? ";
 
-
+        return this.jdbcTemplate.update(deleteUserByIdxQuery,userIdx);
+    }
 }

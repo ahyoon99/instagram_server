@@ -8,10 +8,7 @@ import lombok.Setter;
 @Getter
 @Setter
 @AllArgsConstructor
-public class GetUserRes {
-    private int userIdx;
-    private String name;
-    private String nickName;
-    private String email;
-
+public class GetUserPostsRes {
+    private int postIdx;    // 게시물의 idx 값
+    private String postImgUrl;  // 게시물의 링크
 }

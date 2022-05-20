@@ -9,11 +9,12 @@ import lombok.Setter;
 @Setter
 @AllArgsConstructor
 public class GetUserInfoRes {
+    private int userIdx;
     private String nickName;
     private String name;
     private String profileImgUrl;
     private String website;
-    private String introduction;
+    private String introduce;
     private int followerCount;  // 팔로워의 수
     private int followingCount; // 팔로잉의 수
     private int postCount;  // 게시물의 개수

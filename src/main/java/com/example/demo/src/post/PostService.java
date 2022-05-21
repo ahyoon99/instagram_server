@@ -45,4 +45,25 @@ public class PostService {
         }
     }
 
+    public void modifyPost(int userIdx, int postIdx, PatchPostsReq patchPostsReq) throws BaseException{
+
+        // 먼저 존재하는 유저인지 확인해준다.
+        if(postProvider.checkUserExist(userIdx)==0){
+            throw new BaseException(USERS_EMPTY_USER_ID);
+        }
+        // 존재하는 게시글인지 확인해준다.
+        if(postProvider.checkPostExist(postIdx)==0){
+            throw new BaseException(POST_EMPTY_POST_ID);
+        }
+        try{
+            // postDao에서 업데이트를 성공적으로 마치면 2를 받아줄 것이고, 실패하면 0을 받아줄 것이다.
+            int result = postDao.updatePost(postIdx, patchPostsReq.getContent());
+            if(result==0){
+                throw new BaseException(MODIFY_FAIL_POST);
+            }
+        } catch(Exception exception){
+            throw new BaseException(DATABASE_ERROR);
+        }
+    }
+
 }

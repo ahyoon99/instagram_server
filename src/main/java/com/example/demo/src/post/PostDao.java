@@ -76,6 +76,7 @@ public class PostDao {
                 ), selectPostsParam);
     }
 
+    // userIdx를 가진 유저가 존재하는지 확인해주는 함수
     public int checkUserExist(int userIdx){
         String checkUserExistQuery = "select exists(select userIdx from User where userIdx = ?)";
         int checkUserExistParams = userIdx;
@@ -83,6 +84,15 @@ public class PostDao {
                 int.class,
                 checkUserExistParams);
 
+    }
+
+    // postIdx를 가진 게시물이 존재하는지 확인해주는 함수
+    public int checkPostExist(int postIdx){
+        String checkPostExistQuery = "select exists(select postIdx from Post where postIdx = ?)";
+        int checkPostExistParams = postIdx;
+        return this.jdbcTemplate.queryForObject(checkPostExistQuery,
+                int.class,
+                checkPostExistParams);
     }
 
     public int insertPosts(int userIdx, String content){
@@ -105,6 +115,12 @@ public class PostDao {
         // 우리는 이제 방금 생성한 데이터 즉, 게시글의 postIdx를 client에게 전달해줄 것이다.
         String lastInsertIdxQuery = "select last_insert_id()";  // 가장 마지막에 들어간 Idx값을 리턴해주는 쿼리문이다.
         return jdbcTemplate.queryForObject(lastInsertIdxQuery, int.class);
+    }
+
+    public int updatePost(int postIdx, String content){
+        String updatePostQuery = "UPDATE Post SET content=? WHERE postIdx=?";
+        Object [] updatePostParams = new Object[] {content, postIdx};
+        return this.jdbcTemplate.update(updatePostQuery, updatePostParams);
     }
 
 }

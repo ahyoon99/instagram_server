@@ -85,4 +85,26 @@ public class PostDao {
 
     }
 
+    public int insertPosts(int userIdx, String content){
+        String insertPostsQuery = "INSERT INTO Post(userIdx, content) VALUES (?,?)";
+        Object []insertPostParams = new Object[] {userIdx, content};
+        this.jdbcTemplate.update(insertPostsQuery, insertPostParams);
+
+        // 데이터 생성이 완료되었다.
+        // 우리는 이제 방금 생성한 데이터 즉, 게시글의 postIdx를 client에게 전달해줄 것이다.
+        String lastInsertIdxQuery = "select last_insert_id()";  // 가장 마지막에 들어간 Idx값을 리턴해주는 쿼리문이다.
+        return jdbcTemplate.queryForObject(lastInsertIdxQuery, int.class);
+    }
+
+    public int insertPostImgs(int postIdx, PostImgsUrlsReq postImgsUrlsReq){
+        String insertPostImgsQuery = "INSERT INTO PostImgUrl(postIdx, imgUrl) VALUES (?,?)";
+        Object []insertPostParams = new Object[] {postIdx, postImgsUrlsReq.getImgUrl()};
+        this.jdbcTemplate.update(insertPostImgsQuery, insertPostParams);
+
+        // 데이터 생성이 완료되었다.
+        // 우리는 이제 방금 생성한 데이터 즉, 게시글의 postIdx를 client에게 전달해줄 것이다.
+        String lastInsertIdxQuery = "select last_insert_id()";  // 가장 마지막에 들어간 Idx값을 리턴해주는 쿼리문이다.
+        return jdbcTemplate.queryForObject(lastInsertIdxQuery, int.class);
+    }
+
 }

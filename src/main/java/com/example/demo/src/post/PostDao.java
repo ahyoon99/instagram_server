@@ -123,4 +123,10 @@ public class PostDao {
         return this.jdbcTemplate.update(updatePostQuery, updatePostParams);
     }
 
+    public int deletePost(int postIdx){
+        String deletePostQuery = "UPDATE Post SET status='DELETED' WHERE postIdx=?";
+        Object [] deletePostParams = new Object[] {postIdx};
+        return this.jdbcTemplate.update(deletePostQuery, deletePostParams);
+    }
+
 }

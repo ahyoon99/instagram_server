@@ -4,11 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ce7a11ea-996a-4819-8af1-e2911e758d0a" name="Changes" comment="게시물 삭제 api">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+    <list default="true" id="ce7a11ea-996a-4819-8af1-e2911e758d0a" name="Changes" comment="jwt 발급받기 &amp; 로그인 api구현">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo/config/BaseResponseStatus.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/demo/config/BaseResponseStatus.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo/config/secret/Secret.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/demo/config/secret/Secret.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo/src/post/PostController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/demo/src/post/PostController.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -169,7 +167,7 @@
       <workItem from="1653120715732" duration="1369000" />
       <workItem from="1653122983320" duration="5710000" />
       <workItem from="1653131006572" duration="25000" />
-      <workItem from="1653647936781" duration="4266000" />
+      <workItem from="1653647936781" duration="6019000" />
     </task>
     <task id="LOCAL-00001" summary="유저 피드 조회 api">
       <created>1652957728291</created>
@@ -213,7 +211,14 @@
       <option name="project" value="LOCAL" />
       <updated>1653131016225</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="jwt 발급받기 &amp; 로그인 api구현">
+      <created>1653663605104</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1653663605104</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -249,6 +254,7 @@
     <MESSAGE value="게시물 생성 api" />
     <MESSAGE value="게시물 수정 api" />
     <MESSAGE value="게시물 삭제 api" />
-    <option name="LAST_COMMIT_MESSAGE" value="게시물 삭제 api" />
+    <MESSAGE value="jwt 발급받기 &amp; 로그인 api구현" />
+    <option name="LAST_COMMIT_MESSAGE" value="jwt 발급받기 &amp; 로그인 api구현" />
   </component>
 </project>
